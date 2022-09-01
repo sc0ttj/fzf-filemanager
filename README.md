@@ -6,6 +6,10 @@ A file manager for the terminal, using `fzf`.
 
 ![screenshot of fzf filemanager in mlterm](screenshot.png "fzf filemanager in mlterm")
 
+## Video
+
+https://youtu.be/4nBdGeXn1h0
+
 ## Features
 
 - fast navigation
