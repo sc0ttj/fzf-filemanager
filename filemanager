@@ -150,9 +150,9 @@ function set_remembered_query_or_not {
 function get_column_to_search {
   local nth=2
   if [ ! -f /tmp/fzf/shellprompt ] && [ -f /tmp/fzf/longfilemanager ];then
-    nth='8..-1'
+    nth='8..-1' # long detailed list view
   else
-    nth='2..-1'
+    nth='2..-1' # short list view
   fi
   [ -f /tmp/fzf/shellprompt ] && nth='..'
   echo -n $nth
@@ -334,9 +334,14 @@ Enter a command to run on the current selection: "
       --bind '?:execute(xmessage "HELP MENU")' \
       --bind 'alt-/:execute(xmessage "PWD=$PWD")' \
       --bind 'ctrl-/:execute(xmessage "PWD=$PWD")' \
+      --bind 'ctrl-a:select-all' \
       --bind 'change:top' \
+      --bind 'pgup:half-page-up' \
+      --bind 'pgdn:half-page-down' \
       --bind 'shift-up:half-page-up' \
       --bind 'shift-down:half-page-down' \
+      --bind 'shift-left:preview-page-up' \
+      --bind 'shift-right:preview-page-down' \
       --bind '[:preview-page-up' \
       --bind ']:preview-page-down' \
       --bind 'left:execute-silent(rm /tmp/fzf/querytext;)+clear-query+clear-selection+unix-line-discard+top+down+reload(builtin cd ..; echo "..")+top+down+accept' \
@@ -364,6 +369,7 @@ Enter a command to run on the current selection: "
             || rm /tmp/fzf/showhidden \
         )+top+accept' \
       --bind 'ctrl-q:clear-selection+execute(echo QUIT)+abort' \
+      --bind 'esc:clear-selection' \
       $shellprompt_options \
       --bind "enter:$enter_binding" \
       $fslash_binding \
