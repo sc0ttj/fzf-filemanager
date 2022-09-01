@@ -25,12 +25,15 @@ This is a hack, not than a proper thing, don't expect too much.
 ## Requirements
 
 - `fzf` - used for filtering and choosing files & dirs
-
-**Optional:**
-
 - `exa` - used for listing dirs (supports `.gitignore`, icons, ..)
 - `bat` - used for colourful file previews
 - `fd`  - used for Alt-C (finding lots of dirs, many levels deep)
+
+The above dependences (except `fzf`) could be replaced with regular GNU tools like `ls`, `cat`, `find`.
+
+## Install
+
+Copy `filemanager` to a folder in your `$PATH`.
 
 ## Usage
 
